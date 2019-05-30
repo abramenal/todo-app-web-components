@@ -1,6 +1,6 @@
-const templateTodoList = document.createElement('template');
+const template = document.createElement('template');
 
-templateTodoList.innerHTML = `
+template.innerHTML = `
   <todo-form></todo-form>
   <ul id="list-container"></ul>
 `;
@@ -24,7 +24,7 @@ export default class TodoList extends HTMLElement {
   }
 
   connectedCallback() {
-    this.root.appendChild(templateTodoList.content.cloneNode(true));
+    this.root.appendChild(template.content.cloneNode(true));
     this.todosEl = this.root.getElementById('list-container');
     this.formEl = this.root.querySelector('todo-form');
 
@@ -43,8 +43,7 @@ export default class TodoList extends HTMLElement {
   removeTodo(e) {
     const ix = this.todos.findIndex(todo => todo.title === e.detail.title);
     if (ix === -1) {
-      console.error('something went wrong');
-      return;
+      throw new Error('Error trying to remove certain todo item');
     }
     this.todos.splice(ix, 1);
     this.render();
