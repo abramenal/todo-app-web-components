@@ -1,6 +1,6 @@
 {
   "extends": "airbnb-base",
-  "plugins": ["prettier"],
+  "plugins": ["cypress", "prettier"],
   "env": {
     "browser": true
   },

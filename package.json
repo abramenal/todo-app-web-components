@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "parcel src/index.html --port=3000",
+    "start": "npm run dev",
     "lint": "eslint src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,11 @@
   },
   "homepage": "https://github.com/abramenal/todo-app-web-components#readme",
   "devDependencies": {
+    "cypress": "^3.3.1",
+    "cypress-shadow-dom": "0.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^2.3.0",
